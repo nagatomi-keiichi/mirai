@@ -423,7 +423,11 @@ textarea {
 }
 
 select {
-  width: 100%;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+
 }
 
 i {
@@ -712,7 +716,7 @@ form input[type="submit"] {
 .btn,
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
-  font-size: 14px;
+  font-size: 12px;
   border: 2px solid orange;
   color: orange;
   font-weight: bold;
@@ -1001,7 +1005,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #eea24b;
   border-radius: 20px;
   color: #fff;
   border: 0;
