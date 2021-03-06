@@ -42,7 +42,7 @@
     <h1>aaaaaaaaa</h1>
     <p id="notice"><%= notice %></p>
 
-<h1>自分の日記</h1>
+<h1>未来の日記</h1>
 
 <table>
   <thead>
@@ -58,9 +58,9 @@
       <tr>
         <td><%= diary.title %></td>
         <td><%= diary.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', diary %></td>
-        <td><%= link_to 'Edit', edit_diary_path(diary.id) %></td>
-        <td><%= link_to 'Destroy',diary_path(diary.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '日記詳細', diary %></td>
+        <td><%= link_to '編集', edit_diary_path(diary.id) %></td>
+        <td><%= link_to '日記削除',diary_path(diary.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

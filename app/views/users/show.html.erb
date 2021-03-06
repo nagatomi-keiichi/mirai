@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.name %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">趣味</th>
+            <td class="table__col2"><%= @user.hobby %></td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.name}さんの未来日記"%>
+      </h2>
+      <div class="user__card">
+      </div>
+    </div>
+  </div>
+</div>

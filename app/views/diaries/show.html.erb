@@ -15,5 +15,7 @@
   <%= @diary.content %>
 </p>
 
+<%= image_tag @diary.image  %>
+
 <%= link_to 'Edit', edit_diary_path(@diary) %> |
 <%= link_to 'Back', diaries_path %>
