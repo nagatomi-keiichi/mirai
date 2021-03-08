@@ -1,4 +1,5 @@
 class DiariesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @diaries  = Diary.all
   end
@@ -12,8 +13,12 @@ class DiariesController < ApplicationController
   end
 
   def create
-    Diary.create(diary_parameter)
-    redirect_to diaries_path
+    @diary = Diary.new(diary_parameter)
+    if @diary.save
+      redirect_to diaries_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -38,7 +43,7 @@ class DiariesController < ApplicationController
   private
 
   def diary_parameter
-    params.require(:diary).permit(:title, :content, :start_time, :image)
+    params.require(:diary).permit(:title, :content, :start_time, :image).merge(user_id: current_user.id)
   end
 
 end
