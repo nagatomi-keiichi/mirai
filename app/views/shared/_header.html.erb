@@ -1,0 +1,32 @@
+ <header class="header">
+    <div class="header__bar row">
+      <h1 class="grid-6"><a href="/">MIRAI</a></h1>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <span><%= current_user.name %>
+            <ul class="user__info">
+              <li>
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+          <%= link_to '日記をかく', new_diary_path,class: "post"%>
+
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: "post" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+        </div>
+     <% end %>
+     
+    </div>
+          <%= form_with(url: search_users_path, local: true, method: :get, class: "searchbox-main") do |form| %>
+      <%= form.text_field :name, placeholder: "ユーザーを検索する", class: "searchbox" %>
+      <%= form.submit "検索", class: "searchbox-dd" %>
+      
+   <% end %>
+
+    </div>
+  </header>

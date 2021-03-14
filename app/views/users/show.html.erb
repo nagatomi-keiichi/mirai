@@ -1,26 +1,69 @@
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-      <%= render "relationships/follow_button", user: @user %>
-        <%= @user.name %>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.name %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">趣味</th>
-            <td class="table__col2"><%= @user.hobby %></td>
-          </tr>
-          <tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.name}さんの旅路"%>
-      </h2>
+<%= render "shared/header" %>
+<%=link_to "#{@user.name}さんの情報編集",edit_user_registration_path(@user.id) %>
+<h2 class="page-heading">
+  <%= render "relationships/follow_button", user: @user %>
+   <%# <%= image_tag @user.image  %> 
+  <%= @user.name %>
+</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th class="table__col1">名前</th>
+      <td class="table__col2"><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th class="table__col1">趣味</th>
+      <td class="table__col2"><%= @user.hobby %></td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+<h2 class="page-heading">
+  <%= "#{@user.name}さんの旅路"%>
+</h2>
+
+
+<h1>未来の日記</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>時間</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.diaries.each do |diary| %>
+      <tr>
+        <td><%= diary.title %></td>
+        <td><%= diary.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= link_to '日記詳細', diary %></td>
+        <td><%= link_to '編集', edit_diary_path(diary.id) %></td>
+        <td><%= link_to '日記削除',diary_path(diary.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= month_calendar events: @user.diaries do |date, diaries| %>
+  <%= date.day %>
+
+  <% diaries.each do |diary| %>
+    <div>
+      <%= link_to diary.title, diary %>
+    </div>
+  <% end %>
+<% end %>
+  </div>
+  </div>
+  </div>
+
+
       <div class="user__card">
       </div>
     </div>

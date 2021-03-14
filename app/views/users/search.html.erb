@@ -1,0 +1,16 @@
+<%= render "shared/header"%>
+<table>
+  <thead>
+    <tr>
+      <th>検索結果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%=link_to user.name,user_path(user.id) %></td>
+        <td><%= user.hobby %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
