@@ -40,6 +40,11 @@ class DiariesController < ApplicationController
     end
   end
 
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings
+  end
+
   private
 
   def diary_parameter
