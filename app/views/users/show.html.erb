@@ -1,5 +1,7 @@
 <%= render "shared/header" %>
-<%=link_to "#{@user.name}さんの情報編集",edit_user_registration_path(@user.id) %>
+    <% if current_user.id == @user.id %>
+      <%=link_to "#{@user.name}さんの情報編集",edit_user_registration_path(@user.id) %>
+    <% end %>
 <h2 class="page-heading">
   <%= render "relationships/follow_button", user: @user %>
    <%# <%= image_tag @user.image  %> 
@@ -8,10 +10,6 @@
 <table class="table">
   <tbody>
     <tr>
-      <th class="table__col1">名前</th>
-      <td class="table__col2"><%= @user.name %></td>
-    </tr>
-    <tr>
       <th class="table__col1">趣味</th>
       <td class="table__col2"><%= @user.hobby %></td>
     </tr>
@@ -19,20 +17,12 @@
   </tbody>
 </table>
 <h2 class="page-heading">
-  <%= "#{@user.name}さんの旅路"%>
+  <%= "#{@user.name}さんの旅路一覧"%>
 </h2>
 
 
 <h1>未来の日記</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>時間</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <tbody>
     <% current_user.diaries.each do |diary| %>

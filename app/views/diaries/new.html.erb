@@ -3,18 +3,18 @@
 <%= form_with model: @diary, url:diaries_path, local: true do |f| %>
   <%= render "shared/error_messages", model: @diary %>
 
-  <div class="title">
-    <%= f.label :title %>
+  <div class="field">
+    <%= f.label :title,"タイトル" %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="time">
-    <%= f.label :start_time %>
+  <div class="field">
+    <%= f.label :start_time,"予定日時" %>
     <%= f.datetime_select :start_time %>
   </div>
 
-  <div class="content">
-    <%= f.label :content %>
+  <div class="field">
+    <%= f.label :content,"　　予定" %>
     <%= f.text_field :content %>
   </div>
 
@@ -23,8 +23,8 @@
     <%= f.file_field :image %>
   </div>
 
-  <div class="submit">
-    <%= f.submit %>
+  <div class="field">
+    <%= f.submit"書き込む" %>
   </div>
 
 <% end %>
