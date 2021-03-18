@@ -382,7 +382,7 @@ header.header .user_nav ul li a {
 
 form input,
 form textarea {
-  width: 100%;
+  width: 50%;
   margin: 5px 0 15px;
   padding: 10px;
   border: 1px solid #D8D8D8;
@@ -394,6 +394,7 @@ form input[type="submit"] {
   background-color: #eea24b;
   color: #fff;
   font-size: 18px;
+
 }
 
 form input[type="submit"]:hover {
@@ -402,10 +403,13 @@ form input[type="submit"]:hover {
 
 
 footer {
-  margin: 30px auto;
+  margin: 0;
   padding: 10px;
   color: #D8D8D8;
+  height: 50px;
+  background-color: rgb(226, 240, 237);
 }
+
 
 footer p {
   text-align: center;
@@ -515,4 +519,17 @@ footer p {
 
 .user__info{
 display: f;
+}
+
+.field {
+  text-align: center;
+  justify-content: center;
+}
+.actions{
+text-align: center;
+  justify-content: center;
+}
+.field-p {
+  text-align: center;
+  justify-content: center;
 }
