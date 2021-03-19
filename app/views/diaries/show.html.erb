@@ -1,9 +1,12 @@
 <%= render "shared/header" %>
-<p id="notice"><%= notice %></p>
 
 <%# <p>
   <%= link_to "by #{diary.user.name}", user_path(diary.user.id), class: :card__user %>
 <%# </p> %>
+<p>
+  <strong>投稿者</strong>
+  <%= @diary.user.name %>
+</p>
  
 <p>
   <strong>タイトル</strong>
@@ -22,5 +25,5 @@
 
 <%= image_tag @diary.image  %>
 
-<%= link_to 'Edit', edit_diary_path(@diary) %> |
-<%= link_to 'Back', diaries_path %>
+<%= link_to '編集', edit_diary_path(@diary) %> 
+<%= link_to '削除', diaries_path(@diary.id), method: :delete %>

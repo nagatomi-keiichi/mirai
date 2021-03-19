@@ -15,7 +15,7 @@ class DiariesController < ApplicationController
   def create
     @diary = Diary.new(diary_parameter)
     if @diary.save
-      redirect_to diaries_path
+      redirect_to "/users/#{current_user.id}"
     else
       render :new
     end
@@ -23,8 +23,11 @@ class DiariesController < ApplicationController
 
   def destroy
     @diary = Diary.find(params[:id])
-    @diary.destroy
-    redirect_to diaries_path, notice:"削除しました"
+    if @diary.destroy
+       redirect_to "/users/#{current_user.id}", notice:"削除しました"
+    else
+      render :show
+    end
   end
 
   def edit
@@ -34,7 +37,7 @@ class DiariesController < ApplicationController
   def update
     @diary = Diary.find(params[:id])
     if @diary.update(diary_parameter)
-      redirect_to diaries_path, notice: "編集しました"
+      redirect_to "/users/#{current_user.id}", notice: "編集しました"
     else
       render 'edit'
     end
