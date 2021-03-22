@@ -26,4 +26,4 @@
 <%= image_tag @diary.image  %>
 
 <%= link_to '編集', edit_diary_path(@diary) %> 
-<%= link_to '削除', diaries_path(@diary.id), method: :delete %>
+<%= link_to '削除', diary_path(@diary.id), method: :delete %>

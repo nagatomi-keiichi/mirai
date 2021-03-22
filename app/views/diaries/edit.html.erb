@@ -1,25 +1,37 @@
 <%= render "shared/header" %>
 
-<%= form_with(model: @diary, local: true) do |form| %>
+<%= form_with(model: @diary, local: true) do |f| %>
+  <%= render "shared/error_messages", model: @diary %>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field">
+    <%= f.label :title,"タイトル" %>
+    <%= f.text_field :title %>
   </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+  <div class="field">
+    <%= f.label :start_time,"予定日時" %>
+    <%= f.datetime_select :start_time %>
   </div>
 
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="field">
+    <%= f.label :content,"　　予定" %>
+    <%= f.text_field :content %>
   </div>
 
-
-  <div class="submit">
-    <%= form.submit %>
+  <div class="field">
+    <%= f.label :image, "画像" %><br />
+    <%= f.file_field :image %>
   </div>
+
+  <div class="field">
+    <%= f.submit"編集する" %>
+  </div>
+
+        <footer>
+       <p>
+        Copyright MIRAI 2021.
+       </p>
+      </footer>
+
 
 <% end %>

@@ -8,13 +8,20 @@
        <%= link_to 'フォロー一覧', followings_path(current_user.id)%>
        <%= link_to 'フォロワー一覧', followers_path(current_user.id)%>
        <% end %>
-       <%= yield %>
+     <ul>
+        <% @diaries.each do |diary| %>
+       <li>
+        <%= image_tag diary.image%>
+       </li>
+       <% end %>
+     </ul>
       </div>
-      <footer>
-       <p>
+   </div>
+        <footer>
+       <p> 
         Copyright MIRAI 2021.
        </p>
       </footer>
-   </div>
+
   </body>
 </html>

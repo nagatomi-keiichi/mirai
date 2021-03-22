@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :title,"タイトル" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class:"title-field" %>
   </div>
 
   <div class="field">
@@ -15,12 +15,12 @@
 
   <div class="field">
     <%= f.label :content,"　　予定" %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content,rows:"5",class:"text_area" %>
   </div>
 
   <div class="field">
     <%= f.label :image, "画像" %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class:"image-diary" %>
   </div>
 
   <div class="field">
