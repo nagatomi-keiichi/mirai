@@ -1,27 +1,36 @@
 <html>
-  <body>
+<body>
 <%= render "shared/header" %>
-    <div class= mein-back>
-      <div class="bg-mask">
-       <h1>MIRAIでは予めに起こるであろう事を日記スタイルにし実際にその日とのブレを比較するスタイルの日記です。</h1>
-       <% if user_signed_in? %>
-       <%= link_to 'フォロー一覧', followings_path(current_user.id)%>
-       <%= link_to 'フォロワー一覧', followers_path(current_user.id)%>
-       <% end %>
-     <ul>
-        <% @diaries.each do |diary| %>
-       <li>
-        <%= image_tag diary.image%>
-       </li>
-       <% end %>
-     </ul>
-      </div>
-   </div>
-        <footer>
-       <p> 
-        Copyright MIRAI 2021.
-       </p>
-      </footer>
+<div class= mein-back>
+ <div class="bg-mask">
+  <h1>MIRAIでは予めに起こるであろう事を日記スタイルにし実際にその日とのブレを比較するスタイルの日記です。</h1>
+      <% if user_signed_in? %>
+      <%= link_to 'フォロー一覧', followings_path(current_user.id)%>
+      <%= link_to 'フォロワー一覧', followers_path(current_user.id)%>
+      <% end %>
 
-  </body>
+  <div class="diaries-contents">
+    <h2 class="title">投稿一覧</h2>
+    <ul class="diaries-lists">
+      <% @diaries.each do |diary| %>
+      <li>
+       <%= link_to user_path(diary.id) do %>
+       <div class="diaries-img-content">
+         <%= image_tag diary.image, class: "diary-img"%>
+       </div>
+      </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+  
+ </div>
+</div>
+<footer>
+ <p>
+ Copyright MIRAI 2021.
+ </p>
+</footer>
+
+</body>
 </html>
