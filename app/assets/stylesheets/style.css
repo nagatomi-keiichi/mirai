@@ -539,6 +539,8 @@ text-align: center;
 
 /* トップページ */
 .diaries-contents{
+  flex-direction: column;
+  align-items: center;
   display: flex;
 }
 .diaries-lists{
@@ -546,7 +548,6 @@ text-align: center;
   max-height: 30%;
   vertical-align: bottom;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 .diaries-img-content{

@@ -29,9 +29,6 @@
       <tr>
         <td><%= diary.title %></td>
         <td><%= diary.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to '日記詳細', diary %></td>
-        <td><%= link_to '編集', edit_diary_path(diary.id) %></td>
-        <td><%= link_to '日記削除',diary_path(diary.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

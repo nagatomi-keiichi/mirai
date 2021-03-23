@@ -14,10 +14,13 @@
     <ul class="diaries-lists">
       <% @diaries.each do |diary| %>
       <li>
-       <%= link_to user_path(diary.id) do %>
+       <%= link_to user_path(diary.user_id) do %>
        <div class="diaries-img-content">
          <%= image_tag diary.image, class: "diary-img"%>
        </div>
+       <h3 class="img-title">
+        <%= diary.title%>
+       </h3>
       </li>
       <% end %>
       <% end %>
