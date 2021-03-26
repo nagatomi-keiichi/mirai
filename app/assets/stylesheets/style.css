@@ -548,14 +548,24 @@ text-align: center;
   max-height: 30%;
   vertical-align: bottom;
   display: flex;
+  /* flex-wrap: wrap; */
   justify-content: center;
 }
 .diaries-img-content{
   position: relative;
+  border: 1px solid;
+  border-bottom: none;
+  background-color:rgb(230, 227, 227);
 }
 .diary-img {
   width: 33vh;
   height: 33vh;
+}
+.img-title {
+  background-color: rgb(230, 227, 227);
+  border: 1px solid;
+  border-top: none;
+  height: 50px;
 }
 
 /* 記入ページ */
@@ -565,4 +575,9 @@ text-align: center;
 .text_area{
   width: 50%;
 }
-
+/* 検索ページ */
+.user-in {
+  font-size: 25px;
+  background-color: rgb(230, 250, 176);
+  width: 10%;
+}

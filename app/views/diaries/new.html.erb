@@ -4,7 +4,7 @@
   <%= render "shared/error_messages", model: @diary %>
 
   <div class="field">
-    <%= f.label :title,"タイトル" %>
+    <%= f.label :title,"タイトル＊必須" %>
     <%= f.text_field :title, class:"title-field" %>
   </div>
 
@@ -15,16 +15,16 @@
 
   <div class="field">
     <%= f.label :content,"予定" %>
-    <%= f.text_area :content,rows:"5",class:"text_area" %>
+    <%= f.text_area :content,rows:"10",class:"text_area" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "画像", class:"image-g"%>
+    <%= f.label :image, "画像＊必須", class:"image-g"%>
     <%= f.file_field :image, class:"image-diary" %>
   </div>
 
   <div class="field">
     <%= f.submit"書き込む" %>
   </div>
-
+  <%= render "shared/footer" %>
 <% end %>

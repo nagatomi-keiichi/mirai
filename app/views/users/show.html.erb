@@ -17,26 +17,9 @@
   </tbody>
 </table>
 <h2 class="page-heading">
-  <%= "#{@user.name}さんの旅路一覧"%>
+  <%= "#{@user.name}さんの予定一覧"%>
 </h2>
-
-
-<h1>未来の日記</h1>
-
-
-  <tbody>
-    <% current_user.diaries.each do |diary| %>
-      <tr>
-        <td><%= diary.title %></td>
-        <td><%= diary.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
-
 <%= month_calendar events: @user.diaries do |date, diaries| %>
   <%= date.day %>
 
@@ -46,13 +29,4 @@
     </div>
   <% end %>
 <% end %>
-  </div>
-  </div>
-  </div>
-
-
-      <div class="user__card">
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "shared/footer" %>
