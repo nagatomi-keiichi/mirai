@@ -548,6 +548,8 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  justify-content: space-evenly;
+  );
 }
 .diaries-img-content{
   position: relative;
@@ -563,6 +565,7 @@ text-align: center;
   background-color: rgb(230, 227, 227);
   border: 1px solid;
   border-top: none;
+  margin-bottom: 10px;
   height: 50px;
 }
 
