@@ -7,6 +7,8 @@
 <h2 class="page-heading">
  <% if user_signed_in? %>
   <%= render "relationships/follow_button", user: @user %>
+  <% else %>
+  <h1>ログインするとフォロー出来ます</h1>
  <% end %>
   <%= @user.name %>
 </h2>

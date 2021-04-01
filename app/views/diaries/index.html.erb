@@ -2,7 +2,8 @@
 <%= render "shared/header" %>
 <div class= mein-back>
  <div class="bg-mask">
-  <h1>MIRAIでは予めに起こるであろう事を日記スタイルにし実際にその日とのブレを比較するスタイルの日記です。</h1>
+  <h1 class=main-message>MIRAIでは予めに起こるであろう事を日記スタイルにし実際にその日とのブレを比較するスタイルの日記です</h1>
+  <h1 class=main-message>予定を書いて現実に近づけましょう</h1>
       <% if user_signed_in? %>
       <%= link_to 'フォロー一覧', followings_path(current_user.id)%>
       <%= link_to 'フォロワー一覧', followers_path(current_user.id)%>
