@@ -434,7 +434,7 @@ footer p {
 
 .mein-back {
   background-image: url("start.jpg");
-  /* background-size: cover; */
+  height: 100%;
 }
 
 .service-title {
