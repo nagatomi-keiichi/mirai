@@ -433,7 +433,7 @@ footer p {
 /* ここから */
 
 .mein-back {
-  background-image: url("start.jpg");
+  background-image: image-url("start.jpg");
   height: 100%;
 }
 
