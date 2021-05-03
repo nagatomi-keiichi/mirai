@@ -6,7 +6,8 @@
 
 ### アプリ紹介
 トップページ
-![トップページ](https://user-images.githubusercontent.com/76541309/116776473-8f917d80-aaa3-11eb-8c96-294563be32d1.jpeg)
+![トップページ](https://user-images.githubusercontent.com/76541309/116854819-46703380-ac33-11eb-88db-37e999b371de.jpeg)
+
 画像クリックで日記詳細ページに行きます
 
 <img width="1433" alt="詳細ページ" src="https://user-images.githubusercontent.com/76541309/116776715-05e2af80-aaa5-11eb-846a-e3e96be466b4.png">
@@ -90,4 +91,3 @@ http://3.139.2.242:3000/
 ### Association
 
 - belongs_to :user
-- has_many   :comments
